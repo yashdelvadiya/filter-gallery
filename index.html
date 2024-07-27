@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="./assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./assets/css/style.css">
+</head>
+<body>
+    
+    <div class="loader">
+        <img src="https://wpamelia.com/wp-content/uploads/2018/11/ezgif-2-6d0b072c3d3f.gif" alt="">
+    </div>
+
+
+    <main>
+        <section class="portfolio">
+            <div class="button-group filter-button-group my-5 text-center">
+                <button data-filter="*" class="active">All</button>
+                <button data-filter=".filter-app">App</button>
+                <button data-filter=".filter-card">Card</button>
+                <button data-filter=".filter-web">Web</button>
+              </div>
+            <div class="container">
+                <div class="row grid gy-4">
+                    <div class="col-lg-4 filter-app">
+                        <div class="portfolio-item">
+                            <img src="https://bootstrapmade.com/demo/templates/Laura/assets/img/portfolio/portfolio-1.jpg" alt="1" class="img-fluid">
+                        </div>
+                    </div>
+                    <div class="col-lg-4 filter-card">
+                        <div class="portfolio-item">
+                            <img src="https://bootstrapmade.com/demo/templates/Laura/assets/img/portfolio/portfolio-2.jpg" alt="1" class="img-fluid">
+                        </div>
+                    </div>
+                    <div class="col-lg-4 filter-web">
+                        <div class="portfolio-item">
+                            <img src="https://bootstrapmade.com/demo/templates/Laura/assets/img/portfolio/portfolio-3.jpg" alt="1" class="img-fluid">
+                        </div>
+                    </div>
+                    <div class="col-lg-4 filter-web">
+                        <div class="portfolio-item">
+                            <img src="https://bootstrapmade.com/demo/templates/Laura/assets/img/portfolio/portfolio-4.jpg" alt="1" class="img-fluid">
+                        </div>
+                    </div>
+                    <div class="col-lg-4 filter-app">
+                        <div class="portfolio-item">
+                            <img src="https://bootstrapmade.com/demo/templates/Laura/assets/img/portfolio/portfolio-5.jpg" alt="1" class="img-fluid">
+                        </div>
+                    </div>
+                    <div class="col-lg-4 filter-web">
+                        <div class="portfolio-item">
+                            <img src="https://bootstrapmade.com/demo/templates/Laura/assets/img/portfolio/portfolio-6.jpg" alt="1" class="img-fluid">
+                        </div>
+                    </div>
+                    <div class="col-lg-4 filter-card">
+                        <div class="portfolio-item">
+                            <img src="https://bootstrapmade.com/demo/templates/Laura/assets/img/portfolio/portfolio-7.jpg" alt="1" class="img-fluid">
+                        </div>
+                    </div>
+                    <div class="col-lg-4 filter-web">
+                        <div class="portfolio-item">
+                            <img src="https://bootstrapmade.com/demo/templates/Laura/assets/img/portfolio/portfolio-8.jpg" alt="1" class="img-fluid">
+                        </div>
+                    </div>
+                    <div class="col-lg-4 filter-app">
+                        <div class="portfolio-item">
+                            <img src="https://bootstrapmade.com/demo/templates/Laura/assets/img/portfolio/portfolio-9.jpg" alt="1" class="img-fluid">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="./assets/js/jquery-3.7.1.min.js"></script>
+    <script src="./assets/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.min.js"></script>
+
+    <script>
+        var $grid = $('.grid').isotope({
+            
+        });
+        // filter items on button click
+        $('.filter-button-group').on('click', 'button', function () {
+            var filterValue = $(this).attr('data-filter');
+            $grid.isotope({ filter: filterValue });
+        });
+
+        $(document).ready(function(){
+            $(".filter-button-group button").on('click', function(){
+                $("button").removeClass("active");
+                $(this).addClass("active");
+            })
+        });
+        
+        $(window).on('load', function(){
+            $('.loader').delay(3000).fadeOut();
+        })
+    </script>
+</body>
+</html>
